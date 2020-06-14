@@ -15,6 +15,7 @@ export default {
 		flexWrap: 'wrap'
 	},
 	nav: {
+		margin: '.5em 0',
 		display: 'flex',
 		width: '100%',
 		justifyContent: 'space-between',
