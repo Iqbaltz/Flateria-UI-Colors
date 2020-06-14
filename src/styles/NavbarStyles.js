@@ -15,7 +15,7 @@ export default {
 		fontSize: '20px',
 		alignItems: 'center',
 		justifyContent: 'center',
-		fontFamily: "'Roboto Mono', monospace",
+		fontFamily: "'Pacifico', cursive",
 		'& a': {
 			textDecoration: 'none',
 			color: 'black'
@@ -34,8 +34,8 @@ export default {
 		'& .rc-slider-handle, .rc-slider-handle:hover, .rc-slider-handle:active, .rc-slider-handle:focus': {
 			width: '13px',
 			height: '13px',
-			backgroundColor: 'blueviolet',
-			border: '2px solid blueviolet',
+			backgroundColor: 'royalblue',
+			border: '2px solid royalblue',
 			marginTop: '-3px',
 			outline: 'none',
 			boxShadow: 'none'

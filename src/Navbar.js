@@ -30,7 +30,7 @@ class Navbar extends Component {
 		return (
 			<nav className={classes.Navbar}>
 				<div className={classes.logo}>
-					<Link to="/">ReactColorApp</Link>
+					<Link to="/">Flateria UI Colors</Link>
 				</div>
 				{showLevel && (
 					<div>

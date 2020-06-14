@@ -21,6 +21,9 @@ export default {
 		justifyContent: 'space-between',
 		color: 'white',
 		alignItems: 'center',
+		'& h1': {
+			fontFamily: "'Pacifico', cursive"
+		},
 		'& a': {
 			color: 'white'
 		}
