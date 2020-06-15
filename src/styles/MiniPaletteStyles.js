@@ -5,13 +5,14 @@ export default {
 		padding: '.5rem',
 		position: 'relative',
 		overflow: 'hidden',
-		'&:hover': {
-			cursor: 'pointer'
+		cursor: 'pointer',
+		'&:hover svg': {
+			opacity: 1
 		}
 	},
 	colors: {
 		backgroundColor: '#dae1e4',
-		height: '120px',
+		height: '140px',
 		width: '100%',
 		borderRadius: '5px',
 		overflow: 'hidden'
@@ -36,5 +37,18 @@ export default {
 		margin: '0 auto',
 		position: 'relative',
 		marginBottom: '-4.8px'
+	},
+	deleteIcon: {
+		position: 'absolute',
+		right: 0,
+		top: 0,
+		backgroundColor: '#e22b05',
+		color: 'white',
+		width: '24px',
+		height: '24px',
+		padding: '8px',
+		zIndex: 10,
+		opacity: 0,
+		transition: '0.3s ease-in-out'
 	}
 };

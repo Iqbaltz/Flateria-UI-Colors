@@ -8,7 +8,7 @@ export default {
 		position: 'relative'
 	},
 	container: {
-		width: '50%',
+		width: '60%',
 		display: 'flex',
 		alignItems: 'flex-start',
 		flexDirection: 'column',

@@ -1,54 +1,18 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import AddToPhotos from '@material-ui/icons/AddToPhotos';
 import Button from '@material-ui/core/Button';
 import PaletteMetaForm from './PaletteMetaForm';
 import { Link } from 'react-router-dom';
-
-const drawerWidth = 360;
-
-const useStyles = makeStyles((theme) => ({
-	appBar: {
-		transition: theme.transitions.create([ 'margin', 'width' ], {
-			easing: theme.transitions.easing.sharp,
-			duration: theme.transitions.duration.leavingScreen
-		}),
-		flexDirection: 'row',
-		justifyContent: 'space-between',
-		alignItems: 'center'
-	},
-	appBarShift: {
-		width: `calc(100% - ${drawerWidth}px)`,
-		marginLeft: drawerWidth,
-		transition: theme.transitions.create([ 'margin', 'width' ], {
-			easing: theme.transitions.easing.easeOut,
-			duration: theme.transitions.duration.enteringScreen
-		})
-	},
-	menuButton: {
-		marginRight: theme.spacing(2)
-	},
-	hide: {
-		display: 'none'
-	},
-	navBtns: {
-		marginRight: '1rem',
-		'& a': {
-			textDecoration: 'none'
-		}
-	},
-	button: {
-		margin: '0 .5rem'
-	}
-}));
+import useStyles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({ handleSubmit, handleDrawerOpen, open, palettes }) {
+	const classes = useStyles();
 	const [ showingForm, setShowingForm ] = useState(false);
 
 	const showForm = () => {
@@ -59,7 +23,6 @@ function PaletteFormNav({ handleSubmit, handleDrawerOpen, open, palettes }) {
 		setShowingForm(false);
 	};
 
-	const classes = useStyles();
 	return (
 		<div>
 			<CssBaseline />
@@ -78,7 +41,7 @@ function PaletteFormNav({ handleSubmit, handleDrawerOpen, open, palettes }) {
 						edge="start"
 						className={clsx(classes.menuButton, open && classes.hide)}
 					>
-						<MenuIcon />
+						<AddToPhotos />
 					</IconButton>
 					<Typography variant="h6" noWrap>
 						Create a New Palette

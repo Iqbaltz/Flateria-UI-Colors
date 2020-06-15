@@ -41,17 +41,20 @@ function PaletteMetaForm({ palettes, handleSubmit, hideForm }) {
 	return (
 		<div>
 			<Dialog open={stage === 'emoji'} onClose={hideForm}>
-				<DialogTitle id="form-dialog-title">Choose an Emoji Palette</DialogTitle>
-				<Picker title="Pick an emoji" emoji="point_up" onSelect={savePalette} />
+				<DialogTitle id="form-dialog-title">Choose A Palette Emoji</DialogTitle>
+				<Picker title="Pick a Palette Emoji" emoji="point_up" onSelect={savePalette} />
 			</Dialog>
 			<Dialog open={stage === 'form'} onClose={hideForm} aria-labelledby="form-dialog-title">
 				<ValidatorForm onSubmit={showEmojiPicker}>
 					<DialogTitle id="form-dialog-title">Enter a Palette Name</DialogTitle>
 					<DialogContent>
 						<DialogContentText>
-							Please enter a name for your beutiful palette, and make sure it's unique :)
+							Please enter a name for your new beutiful palette. Make sure it's unique!
 						</DialogContentText>
 						<TextValidator
+							inputProps={{
+								maxLength: 20
+							}}
 							label="Palette Name"
 							value={newPaletteName}
 							name="newPaletteName"
