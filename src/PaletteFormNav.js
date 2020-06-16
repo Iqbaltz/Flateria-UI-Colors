@@ -33,7 +33,7 @@ function PaletteFormNav({ handleSubmit, handleDrawerOpen, open, palettes }) {
 					[classes.appBarShift]: open
 				})}
 			>
-				<Toolbar>
+				<Toolbar className={classes.navTitle}>
 					<IconButton
 						color="inherit"
 						aria-label="open drawer"
