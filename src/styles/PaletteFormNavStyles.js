@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		display: 'none'
 	},
 	navTitle: {
-		[sizes.down('sm')]: {
+		[sizes.down('md')]: {
 			padding: '0 0.5em'
 		},
 		[sizes.down('xs')]: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
 			textDecoration: 'none'
 		},
 		[sizes.down('md')]: {
-			marginRight: '0.3rem'
+			marginRight: '0.2rem'
 		},
 		[sizes.down('sm')]: {
 			marginRight: 0
