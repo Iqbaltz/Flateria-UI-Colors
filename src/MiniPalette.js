@@ -3,19 +3,19 @@ import { withStyles } from '@material-ui/styles';
 import styles from './styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const MiniPalette = ({ classes, paletteName, emoji, colors, handleClick, handleDelete, id }) => {
+const MiniPalette = ({ classes, paletteName, emoji, colors, handleClick, openDialog, id }) => {
 	const miniColorBoxes = colors.map((color) => (
 		<div className={classes.miniColor} style={{ backgroundColor: color.color }} key={color.name} />
 	));
 
-	const deletePalette = (e) => {
+	const handleOpenDialog = (e) => {
 		e.stopPropagation();
-		handleDelete(id);
+		openDialog(id);
 	};
 
 	return (
 		<div className={classes.root} onClick={handleClick}>
-			<DeleteIcon className={classes.deleteIcon} onClick={deletePalette} />
+			<DeleteIcon className={classes.deleteIcon} onClick={handleOpenDialog} />
 			<div className={classes.colors}>{miniColorBoxes}</div>
 			<h5 className={classes.title}>
 				{paletteName} <span className={classes.emoji}>{emoji}</span>
