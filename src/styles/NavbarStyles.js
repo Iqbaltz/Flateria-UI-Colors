@@ -27,7 +27,7 @@ export default {
 		}
 	},
 	slider: {
-		width: '340px',
+		width: '320px',
 		margin: '0 1em',
 		display: 'inline-block',
 		'& .rc-slider-track': {
@@ -45,7 +45,7 @@ export default {
 			outline: 'none',
 			boxShadow: 'none'
 		},
-		[sizes.down('xs')]: {
+		[sizes.down('sm')]: {
 			width: '150px',
 			margin: '0 0.5em'
 		}
