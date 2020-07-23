@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import MiniPalette from './MiniPalette';
 import { withStyles } from '@material-ui/styles';
 import Avatar from '@material-ui/core/Avatar';
@@ -13,8 +15,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import styles from './styles/PaletteListStyles';
-import { Link } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class PaletteList extends Component {
 	constructor(props) {
@@ -51,7 +51,7 @@ class PaletteList extends Component {
 				<div className={classes.container}>
 					<div className={classes.nav}>
 						<h1>Flateria UI Colors</h1>
-						<Link to="/palette/new">Create Palette</Link>
+						<Link to="/palette/new">Create New Palette</Link>
 					</div>
 					<TransitionGroup className={classes.palettes}>
 						{palettes.map((palette) => (

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Palette from './Palette';
+import { Route, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import seedColors from './seedColors';
 import { generatePalette } from './colorHelpers';
-import { Route, Switch } from 'react-router-dom';
+import Palette from './Palette';
 import PaletteList from './PaletteList';
 import SingleColorPalette from './SingleColorPalette';
 import NewPaletteForm from './NewPaletteForm';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Page from './Page';
 
 function App() {
@@ -17,13 +17,12 @@ function App() {
 			return palette.id === id;
 		});
 	};
-
 	useEffect(
 		() => {
 			window.localStorage.setItem('palettes', JSON.stringify(palettes));
 		},
 		[ palettes ]
-	); // run whenever palettes is changed
+	);
 
 	const savePalette = (newPalette) => {
 		setPalettes([ ...palettes, newPalette ]);

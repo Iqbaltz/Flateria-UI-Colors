@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { arrayMove } from 'react-sortable-hoc';
 import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Button from '@material-ui/core/Button';
 import DraggableColorList from './DraggableColorList';
-import { arrayMove } from 'react-sortable-hoc';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import useStyles from './styles/NewPaletteFormStyles';

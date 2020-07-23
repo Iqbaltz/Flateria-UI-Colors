@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { withStyles } from '@material-ui/styles';
-import styles from './styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
+import styles from './styles/MiniPaletteStyles';
 
 class MiniPalette extends PureComponent {
 	constructor(props) {
@@ -21,7 +21,6 @@ class MiniPalette extends PureComponent {
 
 	render() {
 		const { classes, paletteName, emoji, colors } = this.props;
-		console.log('rendering : ', paletteName);
 		const miniColorBoxes = colors.map((color) => (
 			<div className={classes.miniColor} style={{ backgroundColor: color.color }} key={color.name} />
 		));
