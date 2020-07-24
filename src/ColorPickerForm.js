@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChromePicker } from 'react-color';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import chroma from 'chroma-js';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/ColorPickerFormStyles';
@@ -60,8 +61,10 @@ function ColorPickerForm({ paletteIsFull, colors, addNewColor, classes }) {
 					variant="contained"
 					disabled={paletteIsFull}
 					type="submit"
-					color="primary"
-					style={{ backgroundColor: paletteIsFull ? 'lightgrey' : currentColor }}
+					style={{
+						backgroundColor: paletteIsFull ? 'lightgrey' : currentColor,
+						color: chroma(currentColor).luminance() >= 0.7 ? 'rgba(0,0,0,0.6)' : 'white'
+					}}
 				>
 					Add Color
 				</Button>

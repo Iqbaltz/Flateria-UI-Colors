@@ -11,12 +11,13 @@ import DraggableColorList from './DraggableColorList';
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import useStyles from './styles/NewPaletteFormStyles';
+import seedColors from './seedColors';
 
 function NewPalleteForm({ palettes, history, savePalette }) {
 	const classes = useStyles();
 	const [ state, setState ] = useState({
 		open: true,
-		colors: palettes[0].colors
+		colors: seedColors[0].colors
 	});
 
 	const { open, colors } = state;
@@ -45,7 +46,14 @@ function NewPalleteForm({ palettes, history, savePalette }) {
 
 	const addRandomColor = () => {
 		const allColors = palettes.map(({ colors }) => colors).flat();
-		const rand = Math.floor(Math.random() * allColors.length);
+		let rand;
+		let randomColor;
+		let isDuplicateColor = true;
+		while (isDuplicateColor) {
+			rand = Math.floor(Math.random() * allColors.length);
+			randomColor = allColors[rand];
+			isDuplicateColor = colors.some((color) => color.name === randomColor.name);
+		}
 		setState((prevState) => ({
 			...prevState,
 			colors: [ ...colors, allColors[rand] ]
